@@ -1,8 +1,8 @@
-import { Component, inject, Input, OnInit, Signal } from '@angular/core';
-import { TrainingService } from '../training.service';
-import { TrainingDetailsComponent } from '../training-details/training-details.component';
-import { Training } from '../training.model';
-import { RouterLink } from '@angular/router';
+import {Component, inject, Input, OnInit, Signal} from '@angular/core';
+import {TrainingService} from "../training.service";
+import {TrainingDetailsComponent} from "../training-details/training-details.component";
+import {Training} from "../training.model";
+import {RouterLink} from "@angular/router";
 
 function toNumber(value: any) {
   return Number(value);
@@ -11,7 +11,9 @@ function toNumber(value: any) {
 @Component({
   selector: 'tcc-training-details-route',
   standalone: true,
-  imports: [TrainingDetailsComponent, RouterLink],
+  imports: [
+    TrainingDetailsComponent, RouterLink
+  ],
   template: `
     <a [routerLink]="['..']">back</a>
     @if (training(); as training) {
@@ -20,12 +22,12 @@ function toNumber(value: any) {
       <p>Kein Training mit {{id}} gefunden</p>
     }
   `,
-  styles: ``,
+  styles: ``
 })
 export class TrainingDetailsRouteComponent implements OnInit {
   trainingService = inject(TrainingService);
 
-  @Input({ transform: toNumber }) id: number = -1;
+  @Input({transform: toNumber}) id: number = -1;
 
   training!: Signal<Training | undefined>;
 

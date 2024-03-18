@@ -1,8 +1,8 @@
-import { Component, inject, Signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { TrainingService } from './trainings/training.service';
-import { Training } from './trainings/training.model';
-import { CurrencyPipe } from '@angular/common';
+import {Component, inject, Signal} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
+import {TrainingService} from "./trainings/training.service";
+import {Training} from "./trainings/training.model";
+import {CurrencyPipe} from "@angular/common";
 
 @Component({
   selector: 'tcc-root',
