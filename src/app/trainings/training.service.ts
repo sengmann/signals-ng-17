@@ -12,8 +12,8 @@ export class TrainingService {
     () => this.trainings().sort((a, b) => a.price - b.price)[0],
   );
 
-  getById(id: number): Signal<Training | undefined> {
-    return computed(() => this.trainings().find((t) => t.id === id));
+  getById(id: Signal<number>): Signal<Training | undefined> {
+    return computed(() => this.trainings().find((t) => t.id === id()));
   }
 
   update(id: number, training: Partial<Training>) {
